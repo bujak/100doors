@@ -13,8 +13,6 @@ def door(step):
 for i in range(1, 101):
     door(i)
 
-print(tab)
-
 for d, v in enumerate(tab):
     if tab[d] == 1:
         print(d+1,end=" ")
