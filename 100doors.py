@@ -1,18 +1,23 @@
+#  creatig empty list
 tab = []
 
-for d in range(100):
+# filling list with 0 100 times  (0 means that door is closed)
+for door in range(100):
     tab.append(0)
 
-def door(step):
-    for d in range(step-1, 100, step):
-        if tab[d] == 0:
-           tab[d] = 1
+# walking around hallway 100 times
+for step in range(1, 101):
+
+    # shutting and opening doors
+    for door in range(step-1, 100, step):
+        if tab[door] == 0:
+           tab[door] = 1
         else:
-            tab[d] = 0
+            tab[door] = 0
 
-for i in range(1, 101):
-    door(i)
+print("Doors opened:", end=" ")
 
-for d, v in enumerate(tab):
-    if tab[d] == 1:
-        print(d+1,end=" ")
+# printing index of opened doors
+for door, v in enumerate(tab):
+    if tab[door] == 1:
+        print(door + 1, end=", ")
